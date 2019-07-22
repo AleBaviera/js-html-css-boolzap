@@ -138,6 +138,9 @@ input{
   overflow: scroll;
   padding: 10px;
 }
+.template{
+  display: none;
+}
 .send{
   width: 50%;
   background-color:#4aad8e;
