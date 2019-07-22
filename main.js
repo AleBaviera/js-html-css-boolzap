@@ -8,10 +8,9 @@ $('.sendmsg').click(function(){
 
   var newmsg = $('.chat').append('<div class="send">'+ messaggio + '</div>');
 
-  // newmsg.addClass('send');
-
-
-
+  setTimeout(function (){
+    var answ = $('.chat').append('<div class="received"> NON ORA!</div>');
+  }, 1000);
 });
 
 
