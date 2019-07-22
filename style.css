@@ -32,40 +32,62 @@
   background-color: #edd5ce;
   position: relative;
 }
-
+img{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
 .top{
   width: 100%;
-  height: 10%;
+  height: 15%;
   position: absolute;
   top: 0;
   background-color: white;
+  padding: 5px;
+
 
 }
 .center{
   width: 100%;
-  height: 10%;
+  height: 15%;
   position: absolute;
-  top: 10%;
+  top: 15%;
   background-color: white;
+  padding: 5px;
 
 }
+
 .search{
   width: 100%;
-  height: 10%;
+  height: 15%;
   position: absolute;
-  top: 20%;
+  top: 30%;
   background-color: white;
+  padding: 5px;
 
 }
 .contacts{
   position: absolute;
-  height: 70%;
-  top: 30%;
+  width: 100%;
+  height: 55%;
+  top: 45%;
   overflow: scroll;
+}
+.contatto{
+  width: 100%;
+  height: 30px;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.nome{
+  width: 70%;
+  text-align: left;
 }
 .msg{
   width: 100%;
-  height: 10%;
+  height: 15%;
   position: absolute;
   bottom: 0;
   background-color: white;
@@ -73,7 +95,26 @@
 }
 .chat{
   position: absolute;
-  top: 10%;
-  height: 90%;
+  top: 15%;
+  height: 75%;
   overflow: scroll;
 }
+.send{
+  width: 50%;
+  background-color:#4aad8e;
+  color: white;
+  padding: 10px;
+  border-radius: 20px;
+  position: relative;
+  left: 50%;
+
+}
+ .received{
+   width: 50%;
+   background-color: lightyellow;
+   color: orange;
+   padding: 10px;
+   border-radius: 20px;
+   position: relative;
+
+ }
