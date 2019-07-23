@@ -46,7 +46,7 @@ $('.search input').keypress(function (){
     var contatto = $(this).children('.nome').text().toUpperCase();
 
     if (contatto.includes(letters)){
-      console.log('qui sono nell-if', contatto);
+    
       $(this).show();
     }
     else{
