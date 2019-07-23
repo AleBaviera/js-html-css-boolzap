@@ -28,7 +28,7 @@ function sendmsg(){
 };
 
 
-$('.search input').keypress(function (){
+$('.search input').keyup(function (){
 
 
 
@@ -46,7 +46,7 @@ $('.search input').keypress(function (){
     var contatto = $(this).children('.nome').text().toUpperCase();
 
     if (contatto.includes(letters)){
-    
+
       $(this).show();
     }
     else{
