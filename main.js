@@ -5,9 +5,9 @@ $('.sendmsg').click(sendmsg);
 
 
 var tasto = $('.msg input').keypress(function(){
-if(event.which == 13){
-  sendmsg();
-}
+  if(event.which == 13){
+    sendmsg();
+  }
 });
 
 function sendmsg(){
@@ -60,5 +60,65 @@ $('.search input').keyup(function (){
 
   }
 });
+
+
+    // al click su contatto first
+        // rendi active first
+
+        $('.contatto').click(showContact);
+
+
+        // funzione prev
+        function showContact(){
+
+
+
+
+            if($(this).hasClass('.contact-1')){
+              
+              $('.chat-1').addClass('active');
+            }
+
+
+
+
+          }
+
+
+
+                  // var items = $('.contacts , .top , .superchat ');
+                      // console.log(items);
+                      // items.each(function (){
+                      // var posizionecontatto = $('.contacts ').children().index();
+                      // console.log(posizionecontatto);
+                      // var posizionetop = $('.top ').children().index();
+                      // console.log(posizionetop);
+                      // var posizionechat = $('.superchat').children().index();
+                      // console.log(posizionechat);
+                      //
+                      // if(posizionecontatto == posizionetop && posizionetop == posizionechat){
+                      //   // $(this).addClass('active');
+                      //   // $('.top-left' ).addClass('active');
+                      //   // $('.chat' ).addClass('active');
+                      //   $(this).show();
+                        // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 });
