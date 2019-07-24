@@ -1,31 +1,31 @@
 $(document).ready(function () {
 
 
-$('.sendmsg').click(sendmsg);
+// $('.sendmsg').click(sendmsg);
 
+//
+// var tasto = $('.msg input').keypress(function(){
+//   if(event.which == 13){
+//     sendmsg();
+//   }
+// });
 
-var tasto = $('.msg input').keypress(function(){
-  if(event.which == 13){
-    sendmsg();
-  }
-});
-
-function sendmsg(){
-
-  var messaggio = $('.msg input').val();
-  var msgelementsend = $('.template .send').clone();
-  var msgelementreceived = $('.template .received').clone();
-  var newmsg = msgelementsend.text(messaggio);
-  $('.chat').append(newmsg);
-
-  setTimeout(function (){
-    var answ = msgelementreceived.text('non ora');
-    var newansw = $('.chat').append(answ);
-
-  }, 1000);
-
-  messaggio= $('.msg input').val('');
-};
+// function sendmsg(){
+//
+//   var messaggio = $('.msg input').val();
+//   var msgelementsend = $('.template .send').clone();
+//   var msgelementreceived = $('.template .received').clone();
+//   var newmsg = msgelementsend.text(messaggio);
+//   $('.chat').append(newmsg);
+//
+//   setTimeout(function (){
+//     var answ = msgelementreceived.text('non ora');
+//     var newansw = $('.chat').append(answ);
+//
+//   }, 1000);
+//
+//   messaggio= $('.msg input').val('');
+// };
 
 
 $('.search input').keyup(function (){
@@ -77,6 +77,25 @@ $('.search input').keyup(function (){
           if($(this).hasClass('contact-1')){
             $('.chat').removeClass('active');
             $('.chat-1').addClass('active');
+            $('.sendmsg').click(sendmsg);
+
+            function sendmsg(){
+
+              var messaggio = $('.msg input').val();
+              var msgelementsend = $('.template .send').clone();
+              var msgelementreceived = $('.template .received').clone();
+              var newmsg = msgelementsend.text(messaggio);
+              $('.chat-1').append(newmsg);
+
+              setTimeout(function (){
+                var answ = msgelementreceived.text('non ora');
+                var newansw = $('.chat-1').append(answ);
+
+              }, 1000);
+
+              messaggio= $('.msg input').val('');
+            };
+
 
           }
 
@@ -84,15 +103,93 @@ $('.search input').keyup(function (){
             if($(this).hasClass('contact-2')){
               $('.chat').removeClass('active');
               $('.chat-2').addClass('active');
+              $('.sendmsg').click(sendmsg);
+
+              var tasto = $('.msg input').keypress(function(){
+                if(event.which == 13){
+                  sendmsg();
+                }
+              });
+
+
+              function sendmsg(){
+
+                var messaggio = $('.msg input').val();
+                var msgelementsend = $('.template .send').clone();
+                var msgelementreceived = $('.template .received').clone();
+                var newmsg = msgelementsend.text(messaggio);
+                $('.chat-2').append(newmsg);
+
+                setTimeout(function (){
+                  var answ = msgelementreceived.text('non ora');
+                  var newansw = $('.chat-2').append(answ);
+
+                }, 1000);
+
+                messaggio= $('.msg input').val('');
+              };
+
             }
 
             if($(this).hasClass('contact-3')){
               $('.chat').removeClass('active');
               $('.chat-3').addClass('active');
+              $('.sendmsg').click(sendmsg);
+
+              var tasto = $('.msg input').keypress(function(){
+                if(event.which == 13){
+                  sendmsg();
+                }
+              });
+
+
+              function sendmsg(){
+
+                var messaggio = $('.msg input').val();
+                var msgelementsend = $('.template .send').clone();
+                var msgelementreceived = $('.template .received').clone();
+                var newmsg = msgelementsend.text(messaggio);
+                $('.chat-3').append(newmsg);
+
+                setTimeout(function (){
+                  var answ = msgelementreceived.text('non ora');
+                  var newansw = $('.chat-3').append(answ);
+
+                }, 1000);
+
+                messaggio= $('.msg input').val('');
+              };
+
             }
             if($(this).hasClass('contact-4')){
               $('.chat').removeClass('active');
               $('.chat-4').addClass('active');
+              $('.sendmsg').click(sendmsg);
+
+              var tasto = $('.msg input').keypress(function(){
+                if(event.which == 13){
+                  sendmsg();
+                }
+              });
+
+
+              function sendmsg(){
+
+                var messaggio = $('.msg input').val();
+                var msgelementsend = $('.template .send').clone();
+                var msgelementreceived = $('.template .received').clone();
+                var newmsg = msgelementsend.text(messaggio);
+                $('.chat-4').append(newmsg);
+
+                setTimeout(function (){
+                  var answ = msgelementreceived.text('non ora');
+                  var newansw = $('.chat-4').append(answ);
+
+                }, 1000);
+
+                messaggio= $('.msg input').val('');
+              };
+
             }
 
 
