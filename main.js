@@ -71,15 +71,29 @@ $('.search input').keyup(function (){
         // funzione prev
         function showContact(){
 
+          var nome = $(this).text();
+          $('.top-left .nome').text(nome);
+
+          if($(this).hasClass('contact-1')){
+            $('.chat').removeClass('active');
+            $('.chat-1').addClass('active');
+
+          }
 
 
-
-            if($(this).hasClass('.contact-1')){
-              
-              $('.chat-1').addClass('active');
+            if($(this).hasClass('contact-2')){
+              $('.chat').removeClass('active');
+              $('.chat-2').addClass('active');
             }
 
-
+            if($(this).hasClass('contact-3')){
+              $('.chat').removeClass('active');
+              $('.chat-3').addClass('active');
+            }
+            if($(this).hasClass('contact-4')){
+              $('.chat').removeClass('active');
+              $('.chat-4').addClass('active');
+            }
 
 
           }
