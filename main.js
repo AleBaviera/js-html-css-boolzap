@@ -15,12 +15,12 @@ function sendmsg(){
   var messaggio = $('.msg input').val();
   var msgelementsend = $('.template .send').clone();
   var msgelementreceived = $('.template .received').clone();
-  var newmsg = msgelementsend.text(messaggio);
-  $('.chat.active').append(newmsg);
+  var newmsg = msgelementsend.children('p').text(messaggio);
+  $('.chat.active').append(msgelementsend);
 
   setTimeout(function (){
-    var answ = msgelementreceived.text('non ora');
-    var newansw = $('.chat.active').append(answ);
+    var answ = msgelementreceived.children('p').text('non ora');
+    var newansw = $('.chat.active').append(msgelementreceived);
 
   }, 1000);
 
@@ -62,7 +62,7 @@ $('.search input').keyup(function (){
 });
 
 
-$('.contatto').click(function(){
+  $('.contatto').click(function(){
   var nome = $(this).find('.nome').text();
   $('.top-left .nome').text(nome);
   var img = $(this).find('img').attr('src');
@@ -76,21 +76,34 @@ $('.contatto').click(function(){
   $('.chat[refchat="'+ refchat +'"]').addClass('active');
 
 
-});
-
-  $('.chat').on('click', '.send', function(){
-    $(this).children('i delete').toggleClass('active');
+  });
 
 
+
+  $(document).on('mouseenter','.send',function(){
+    $(this).find('.delete').addClass('active');
+
+    $(document).on('click', '.deletemsg', function(){
+      $(this).parents('.send').remove();
+    });
 
   });
 
-  $('.chat').on('click', '.received', function(){
-    $(this).children('i delete').toggleClass('active');
+  $(document).on('mouseleave','.send',function(){
+    $(this).find('.delete').removeClass('active');
+  });
 
 
+  $(document).on('mouseenter','.received',function(){
+    $(this).find('.delete').addClass('active');
 
+    $(document).on('click', '.deletemsg', function(){
+      $(this).parents('.received').remove();
+    });
+  });
 
+  $(document).on('mouseleave','.received',function(){
+    $(this).find('.delete').removeClass('active');
   });
 
 

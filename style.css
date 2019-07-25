@@ -145,9 +145,7 @@ input{
   display: none;
 }
 
-.template{
-  display: none;
-}
+
 .send{
   width: 50%;
   background-color:#4aad8e;
@@ -169,16 +167,28 @@ input{
    position: relative;
 
  }
- .received:hover i .delete, .send:hover i .delete{
-   display: inline-block;
- }
- .delete{
-   width: 100px;
-   height: 50px;
-   background-color: white;
-   position: absolute;
-   color: black;
 
+ .delete{
+   width: 200px;
+   height: 50px;
+   border-radius: 5px;
+   background-color: lightgray;
+   font-size: 20px;
+   position: absolute;
+   color: gray;
+   display: none;
+   top: 10px;
+   left: 100px;
+   padding: 5px;
+ }
+ .delete ul li{
+    list-style: none;
+ }
+.delete.active{
+  display: block;
+}
+ .template{
+   display: none;
  }
 .active{
   display: inherit;
