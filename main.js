@@ -63,9 +63,10 @@ $('.search input').keyup(function (){
 
 
 $('.contatto').click(function(){
-  var nome = $(this).text();
+  var nome = $(this).find('.nome').text();
   $('.top-left .nome').text(nome);
-
+  var img = $(this).find('img').attr('src');
+  $('.top-left img').not('#mia').attr('src',img);
   var refchat = $(this).attr('refchat');
   console.log(refchat);
 
@@ -77,5 +78,5 @@ $('.contatto').click(function(){
 
 });
 
-    
+
 });
