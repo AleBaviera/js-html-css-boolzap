@@ -114,6 +114,9 @@ i{
 .contatto:hover{
   background-color: lightgray;
 }
+.gray{
+  background-color: lightgray;
+}
 .nome{
   width: 70%;
   text-align: left;
@@ -162,6 +165,7 @@ input{
    width: 50%;
    background-color: lightyellow;
    color: orange;
+   margin: 5px 0;
    padding: 10px;
    border-radius: 20px;
    position: relative;
@@ -173,7 +177,7 @@ input{
    height: 50px;
    border-radius: 5px;
    background-color: lightgray;
-   font-size: 20px;
+   font-size: 10px;
    position: absolute;
    color: gray;
    display: none;
@@ -184,9 +188,9 @@ input{
  .delete ul li{
     list-style: none;
  }
-.delete.active{
+/* .delete.active{
   display: block;
-}
+} */
  .template{
    display: none;
  }

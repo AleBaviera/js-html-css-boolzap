@@ -75,6 +75,8 @@ $('.search input').keyup(function (){
 
   $('.chat[refchat="'+ refchat +'"]').addClass('active');
 
+  $(this).addClass('gray');
+  $('.contatto').not(this).removeClass('gray');
 
   });
 
