@@ -68,6 +68,10 @@ i{
 .access, .notifiche{
   font-size: 8px;
   color: lightgray;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+
 }
 
 .center{
@@ -163,6 +167,17 @@ input{
    padding: 10px;
    border-radius: 20px;
    position: relative;
+
+ }
+ .received:hover i .delete, .send:hover i .delete{
+   display: inline-block;
+ }
+ .delete{
+   width: 100px;
+   height: 50px;
+   background-color: white;
+   position: absolute;
+   color: black;
 
  }
 .active{

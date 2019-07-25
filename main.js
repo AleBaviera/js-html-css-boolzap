@@ -78,5 +78,20 @@ $('.contatto').click(function(){
 
 });
 
+  $('.chat').on('click', '.send', function(){
+    $(this).children('i delete').toggleClass('active');
+
+
+
+  });
+
+  $('.chat').on('click', '.received', function(){
+    $(this).children('i delete').toggleClass('active');
+
+
+
+
+  });
+
 
 });
