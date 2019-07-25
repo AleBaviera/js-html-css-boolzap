@@ -1,31 +1,31 @@
 $(document).ready(function () {
 
 
-// $('.sendmsg').click(sendmsg);
+$('.sendmsg').click(sendmsg);
 
-//
-// var tasto = $('.msg input').keypress(function(){
-//   if(event.which == 13){
-//     sendmsg();
-//   }
-// });
 
-// function sendmsg(){
-//
-//   var messaggio = $('.msg input').val();
-//   var msgelementsend = $('.template .send').clone();
-//   var msgelementreceived = $('.template .received').clone();
-//   var newmsg = msgelementsend.text(messaggio);
-//   $('.chat').append(newmsg);
-//
-//   setTimeout(function (){
-//     var answ = msgelementreceived.text('non ora');
-//     var newansw = $('.chat').append(answ);
-//
-//   }, 1000);
-//
-//   messaggio= $('.msg input').val('');
-// };
+var tasto = $('.msg input').keypress(function(){
+  if(event.which == 13){
+    sendmsg();
+  }
+});
+
+function sendmsg(){
+
+  var messaggio = $('.msg input').val();
+  var msgelementsend = $('.template .send').clone();
+  var msgelementreceived = $('.template .received').clone();
+  var newmsg = msgelementsend.text(messaggio);
+  $('.chat.active').append(newmsg);
+
+  setTimeout(function (){
+    var answ = msgelementreceived.text('non ora');
+    var newansw = $('.chat.active').append(answ);
+
+  }, 1000);
+
+  messaggio= $('.msg input').val('');
+};
 
 
 $('.search input').keyup(function (){
@@ -62,174 +62,20 @@ $('.search input').keyup(function (){
 });
 
 
-    // al click su contatto first
-        // rendi active first
+$('.contatto').click(function(){
+  var nome = $(this).text();
+  $('.top-left .nome').text(nome);
 
-        $('.contatto').click(showContact);
+  var refchat = $(this).attr('refchat');
+  console.log(refchat);
 
-
-        // funzione prev
-        function showContact(){
-
-          var nome = $(this).text();
-          $('.top-left .nome').text(nome);
-
-          if($(this).hasClass('contact-1')){
-            $('.chat').removeClass('active');
-            $('.chat-1').addClass('active');
-            $('.sendmsg').click(sendmsg);
-
-            function sendmsg(){
-
-              var messaggio = $('.msg input').val();
-              var msgelementsend = $('.template .send').clone();
-              var msgelementreceived = $('.template .received').clone();
-              var newmsg = msgelementsend.text(messaggio);
-              $('.chat-1').append(newmsg);
-
-              setTimeout(function (){
-                var answ = msgelementreceived.text('non ora');
-                var newansw = $('.chat-1').append(answ);
-
-              }, 1000);
-
-              messaggio= $('.msg input').val('');
-            };
+  $('.chat').removeClass('active');
 
 
-          }
+  $('.chat[refchat="'+ refchat +'"]').addClass('active');
 
 
-            if($(this).hasClass('contact-2')){
-              $('.chat').removeClass('active');
-              $('.chat-2').addClass('active');
-              $('.sendmsg').click(sendmsg);
+});
 
-              var tasto = $('.msg input').keypress(function(){
-                if(event.which == 13){
-                  sendmsg();
-                }
-              });
-
-
-              function sendmsg(){
-
-                var messaggio = $('.msg input').val();
-                var msgelementsend = $('.template .send').clone();
-                var msgelementreceived = $('.template .received').clone();
-                var newmsg = msgelementsend.text(messaggio);
-                $('.chat-2').append(newmsg);
-
-                setTimeout(function (){
-                  var answ = msgelementreceived.text('non ora');
-                  var newansw = $('.chat-2').append(answ);
-
-                }, 1000);
-
-                messaggio= $('.msg input').val('');
-              };
-
-            }
-
-            if($(this).hasClass('contact-3')){
-              $('.chat').removeClass('active');
-              $('.chat-3').addClass('active');
-              $('.sendmsg').click(sendmsg);
-
-              var tasto = $('.msg input').keypress(function(){
-                if(event.which == 13){
-                  sendmsg();
-                }
-              });
-
-
-              function sendmsg(){
-
-                var messaggio = $('.msg input').val();
-                var msgelementsend = $('.template .send').clone();
-                var msgelementreceived = $('.template .received').clone();
-                var newmsg = msgelementsend.text(messaggio);
-                $('.chat-3').append(newmsg);
-
-                setTimeout(function (){
-                  var answ = msgelementreceived.text('non ora');
-                  var newansw = $('.chat-3').append(answ);
-
-                }, 1000);
-
-                messaggio= $('.msg input').val('');
-              };
-
-            }
-            if($(this).hasClass('contact-4')){
-              $('.chat').removeClass('active');
-              $('.chat-4').addClass('active');
-              $('.sendmsg').click(sendmsg);
-
-              var tasto = $('.msg input').keypress(function(){
-                if(event.which == 13){
-                  sendmsg();
-                }
-              });
-
-
-              function sendmsg(){
-
-                var messaggio = $('.msg input').val();
-                var msgelementsend = $('.template .send').clone();
-                var msgelementreceived = $('.template .received').clone();
-                var newmsg = msgelementsend.text(messaggio);
-                $('.chat-4').append(newmsg);
-
-                setTimeout(function (){
-                  var answ = msgelementreceived.text('non ora');
-                  var newansw = $('.chat-4').append(answ);
-
-                }, 1000);
-
-                messaggio= $('.msg input').val('');
-              };
-
-            }
-
-
-          }
-
-
-
-                  // var items = $('.contacts , .top , .superchat ');
-                      // console.log(items);
-                      // items.each(function (){
-                      // var posizionecontatto = $('.contacts ').children().index();
-                      // console.log(posizionecontatto);
-                      // var posizionetop = $('.top ').children().index();
-                      // console.log(posizionetop);
-                      // var posizionechat = $('.superchat').children().index();
-                      // console.log(posizionechat);
-                      //
-                      // if(posizionecontatto == posizionetop && posizionetop == posizionechat){
-                      //   // $(this).addClass('active');
-                      //   // $('.top-left' ).addClass('active');
-                      //   // $('.chat' ).addClass('active');
-                      //   $(this).show();
-                        // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 });
