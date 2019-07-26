@@ -30,20 +30,14 @@ function sendmsg(){
 
 
 
-  function showplane(){
-  $('.fa-microphone').hide();
-  $('.fa-paper-plane').show();
-  }
 
-  function istyping(){
+
+$('.msg input').focus(function(){
   $('.fa-microphone').hide();
   $('.fa-paper-plane').show();
   $('.top-left .access').text('sta scrivendo..');
 
-  }
-
-  $('.msg input').focus(showplane);
-  $('.msg input').keyup(istyping);
+});
 
   $('.msg input').focusout(function(){
     $('.fa-microphone').show();
