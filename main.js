@@ -45,14 +45,12 @@ function sendmsg(){
   $('.msg input').focus(showplane);
   $('.msg input').keyup(istyping);
 
-  // $('.msg').on('click', 'input', showplane());
-  // $('.msg').on('keyup', 'input', istyping());
+  $('.msg input').focusout(function(){
+    $('.fa-microphone').show();
+    $('.fa-paper-plane').hide();
+    $('.top-left .access').text('Ultimo accesso alle');
 
-  $('.fa-microphone').show();
-  $('.fa-paper-plane').hide();
-  $('.top-left .access').text('Ultimo accesso alle');
-
-
+  });
 
 
 
