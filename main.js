@@ -28,11 +28,35 @@ function sendmsg(){
 };
 
 
+
+
+  function showplane(){
+  $('.fa-microphone').hide();
+  $('.fa-paper-plane').show();
+  }
+
+  function istyping(){
+  $('.fa-microphone').hide();
+  $('.fa-paper-plane').show();
+  $('.top-left .access').text('sta scrivendo..');
+
+  }
+
+  $('.msg input').focus(showplane);
+  $('.msg input').keyup(istyping);
+
+  // $('.msg').on('click', 'input', showplane());
+  // $('.msg').on('keyup', 'input', istyping());
+
+  $('.fa-microphone').show();
+  $('.fa-paper-plane').hide();
+  $('.top-left .access').text('Ultimo accesso alle');
+
+
+
+
+
 $('.search input').keyup(function (){
-
-
-
-
 
 
   $('.contatto').each(search);
@@ -68,7 +92,7 @@ $('.search input').keyup(function (){
   var img = $(this).find('img').attr('src');
   $('.top-left img').not('#mia').attr('src',img);
   var refchat = $(this).attr('refchat');
-  console.log(refchat);
+
 
   $('.chat').removeClass('active');
 
