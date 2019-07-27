@@ -165,37 +165,37 @@ input{
   overflow: hidden;
 
 }
- .received{
-   width: 50%;
-   background-color: lightyellow;
-   color: orange;
-   margin: 5px 0;
-   padding: 10px;
-   border-radius: 20px;
-   position: relative;
+.received{
+ width: 50%;
+ background-color: lightyellow;
+ color: orange;
+ margin: 5px 0;
+ padding: 10px;
+ border-radius: 20px;
+ position: relative;
 
- }
- 
- .delete{
-   width: 200px;
-   height: 50px;
-   border-radius: 5px;
-   background-color: lightgray;
-   font-size: 10px;
-   position: absolute;
-   color: gray;
-   display: none;
-   top: 10px;
-   left: 100px;
-   padding: 5px;
- }
- .delete ul li{
-    list-style: none;
- }
+}
 
- .template{
-   display: none;
- }
+.delete{
+ width: 200px;
+ height: 50px;
+ border-radius: 5px;
+ background-color: lightgray;
+ font-size: 10px;
+ position: absolute;
+ color: gray;
+ display: none;
+ top: 10px;
+ left: 100px;
+ padding: 5px;
+}
+.delete ul li{
+  list-style: none;
+}
+
+.template{
+ display: none;
+}
 .active{
-  display: inherit;
+display: inherit;
 }
