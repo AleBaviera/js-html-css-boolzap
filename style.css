@@ -163,6 +163,8 @@ input{
   position: relative;
   left: 50%;
   overflow: hidden;
+  display: flex;
+  justify-content: space-between;
 
 }
 .received{
@@ -173,6 +175,8 @@ input{
  padding: 10px;
  border-radius: 20px;
  position: relative;
+ display: flex;
+ justify-content: space-between;
 
 }
 

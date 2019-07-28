@@ -1,6 +1,8 @@
 $(document).ready(function () {
 
 
+
+
   $('.sendmsg').click(sendmsg);
 
   // premere il tasto invio nell'input message
@@ -15,11 +17,22 @@ $(document).ready(function () {
   //funzione invio messaggi in chat
   function sendmsg(){
 
+    var time = new Date();
+    var ora = time.getHours();
+    var minuti = time.getMinutes();
+    var lastmsg = ora + '.' + minuti;
+
     var messaggio = $('.msg input').val();
     var msgelementsend = $('.template .send').clone();
     var msgelementreceived = $('.template .received').clone();
     var newmsg = msgelementsend.children('p').text(messaggio);
+    var newtime = msgelementsend.children('.time').text(lastmsg);
+    var newtimerec = msgelementreceived.children('.time').text(lastmsg);
+
     $('.chat.active').append(msgelementsend);
+
+
+
 
     setTimeout(function (){
       var answ = msgelementreceived.children('p').text('non ora');
@@ -27,29 +40,33 @@ $(document).ready(function () {
 
     }, 1000);
 
+
+
     messaggio= $('.msg input').val('');
-  };
 
 
 
 
 
-  // con queste funzioni mi focalizzo sull'input dell'utente
-  // mentre sta per inviare messaggi (cambia l'icona e il messaggio in top)
 
-  $('.msg input').focus(function(){
-    $('.fa-microphone').hide();
-    $('.fa-paper-plane').show();
-    $('.top-left .access').text('sta scrivendo..');
+};
+    // con queste funzioni mi focalizzo sull'input dell'utente
+    // mentre sta per inviare messaggi (cambia l'icona e il messaggio in top)
 
-  });
+    $('.msg input').focus(function(){
+      $('.fa-microphone').hide();
+      $('.fa-paper-plane').show();
+      $('.top-left .access').text('sta scrivendo..');
 
-  $('.msg input').focusout(function(){
-    $('.fa-microphone').show();
-    $('.fa-paper-plane').hide();
-    $('.top-left .access').text('Ultimo accesso alle');
+    });
 
-  });
+    $('.msg input').focusout(function(){
+      $('.fa-microphone').show();
+      $('.fa-paper-plane').hide();
+      $('.top-left .access').text('Ultimo accesso alle'+$('.chat.active').find('.time:last-child').text());
+
+
+    });
 
 
   // funzione ricerca contatto in base alle lettere chiave digitate
@@ -84,14 +101,15 @@ $(document).ready(function () {
     $('.top-left img').not('#mia').attr('src',img);
     var refchat = $(this).attr('refchat');
 
-
     $('.chat').removeClass('active');
 
     $('.chat[refchat="'+ refchat +'"]').addClass('active');
 
+
+
     $(this).addClass('gray');
     $('.contatto').not(this).removeClass('gray');
-
+    $(this).find('.time').text($('.chat.active').find('.time:last-child').text())
   });
 
 
@@ -123,6 +141,16 @@ $(document).ready(function () {
   $(document).on('mouseleave','.received',function(){
     $(this).find('.delete').removeClass('active');
   });
+
+
+
+  //funzione per impostare ora ultimo messaggio
+
+  function setTime(){
+
+
+
+  }
 
 
 });
